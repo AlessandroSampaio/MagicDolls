@@ -7,6 +7,14 @@ export default {
 
   theme: {
     extend: {},
+    colors: {
+      white: '#fff',
+      primary : {
+        DEFAULT: '#f562f5',
+        dark: '#cc41cc',
+        light: '#f29bf2'
+      }
+    }
   },
   plugins: [],
 };
