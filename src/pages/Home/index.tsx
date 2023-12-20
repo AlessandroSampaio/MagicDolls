@@ -19,7 +19,7 @@ export function Home() {
             </div>
 
             {/* Menu */}
-            <div className='hidden md:flex items-center space-x-1'>
+            <div className='hidden md:flex items-center space-x-1 w-full justify-end'>
               <a href="/" className="py-4 px-2 text-primary border-b-4 border-primary-dark font-semibold">Inicio</a>
               <a href="/" className="py-4 px-2 text-primary border-b-4 border-primary-dark font-semibold">Catalogo</a>
               <a href="/" className="py-4 px-2 text-primary border-b-4 border-primary-dark font-semibold">Orçamento</a>
