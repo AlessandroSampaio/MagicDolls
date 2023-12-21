@@ -1,13 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Home } from './pages/Home';
+import { Header } from '../components/Header';
 
-function App() {
+export function Layout() {
   return (
     <>
-      <Home />
+      <Header />
       <Outlet />
     </>
   );
 }
-
-export default App;
