@@ -7,7 +7,7 @@ export function Header () {
   const [isNavOpen, setNavOpen] = useState(false);
 
   return (
-    <nav className='bg-white shadow-lg'>
+    <nav className='bg-white shadow-primary-light shadow-lg'>
       <div className="max-w-6xl mx-auto px4">
         <div className="flex justify-between w-full ">
           <div className="flex space-x-7 w-full">
