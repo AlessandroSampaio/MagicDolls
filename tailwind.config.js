@@ -9,9 +9,6 @@ export default withMT({
   ],
 
   theme: {
-    fontFamily: {
-      'roboto': ['RobotoSlab', 'sans-serif']
-    },
     extend: {
       colors: {
         ...colors,
@@ -20,6 +17,9 @@ export default withMT({
           dark: '#cc41cc',
           light: '#f29bf2'
         }
+      },
+      fontFamily: {
+        sans: ['RobotoSlab']
       }
     },
   },
