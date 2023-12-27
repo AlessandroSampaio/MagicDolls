@@ -11,7 +11,7 @@ export function About() {
         <Typography variant="h5" className="mb-2" placeholder=''>
           Sobre nós
         </Typography>
-        <Typography placeholder='' className='mb-8 text-pretty'>
+        <Typography placeholder='' className='mb-8 text-pretty font-medium'>
           Olá, meu nome é Tiago Vasconcelos. Sou de Fortaleza e sou o artesão responsável pela <a className='underline underline-offset-4' href='https://www.instagram.com/magicdolls.arts/'>Magicdolls.art</a>. Tenho trabalhado com Biscuit desde setembro de 2021.
         </Typography>
         <Typography placeholder='' className='mb-8 text-pretty'>
