@@ -3,6 +3,7 @@ import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Layout } from './pages/Layout.tsx';
 import Questions from './pages/Questions/index.tsx';
+import { Catalogo } from './pages/Catalog/index.tsx';
 
 export function App() {
   return (
@@ -10,7 +11,8 @@ export function App() {
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
-            <Route path='/' element={<Home />}/>
+            <Route path='/' element={<Home />} />
+            <Route path='/catalogo' element={<Catalogo />} />
             <Route path='/sobre' element={<About />} />
             <Route path='/duvidas-frequentes' element={<Questions />} />
           </Route>
