@@ -18,6 +18,9 @@ export default withMT({
       },
       fontFamily: {
         sans: ['RobotoSlab']
+      },
+      screens: {
+        mobile: { 'max' : '540px' }
       }
     },
   },

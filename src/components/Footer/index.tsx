@@ -16,14 +16,14 @@ export function Footer() {
           className='flex align-middle items-center gap-1 text-gray-100'
         >
           <img src={instagram} alt='instagram' className='size-12' />
-          <p>Instagram</p>
+          <p className='mobile:hidden '>Instagram</p>
         </a>
         <a
           href="https://pin.it/5RFfkXi"
           className='flex align-middle items-center gap-1 text-gray-100'
         >
           <img src={pinterest} alt='pinterest' className='size-12' />
-          <p>Pinterest</p>
+          <p className='mobile:hidden'>Pinterest</p>
         </a>
       </div>
     </div>
