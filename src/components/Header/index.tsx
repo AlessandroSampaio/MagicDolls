@@ -8,7 +8,7 @@ export function Header () {
 
   return (
     <nav className='bg-white shadow-primary-light shadow-lg'>
-      <div className="max-w-6xl mx-auto px4">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="flex justify-between w-full ">
           <div className="flex space-x-7 w-full">
             {/* Logo */}
