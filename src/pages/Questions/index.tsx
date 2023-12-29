@@ -11,14 +11,14 @@ export default function Questions() {
   }
 
   return (
-    <>
+    <div className='px-8'>
       <PageHeader >Dúvidas Frequentes</PageHeader>
       <Accordion open={open === 1} placeholder='Duvidas'>
         <AccordionHeader
 
           onClick={() => handleOpen(1)}
           placeholder='Duvidas'
-          className='text-md mx-4'
+          className='text-md '
         >
           Como faço pra encomendar uma peça?
         </AccordionHeader>
@@ -34,7 +34,7 @@ export default function Questions() {
 
           onClick={() => handleOpen(2)}
           placeholder='Duvidas'
-          className='text-md mx-4'
+          className='text-md '
         >
          Existe limites de peça por cliente?
         </AccordionHeader>
@@ -50,7 +50,7 @@ export default function Questions() {
 
           onClick={() => handleOpen(3)}
           placeholder='Duvidas'
-          className='text-md mx-4'
+          className='text-md '
         >
          Orçamento tem validade?
         </AccordionHeader>
@@ -66,7 +66,7 @@ export default function Questions() {
 
           onClick={() => handleOpen(4)}
           placeholder='Duvidas'
-          className='text-md mx-4'
+          className='text-md '
         >
          O que acontece se eu não confirmar o orçamento?
         </AccordionHeader>
@@ -82,7 +82,7 @@ export default function Questions() {
 
           onClick={() => handleOpen(5)}
           placeholder='Duvidas'
-          className='text-md mx-4'
+          className='text-md '
         >
          O que acontece se meu pedido for extraviado no envio?
         </AccordionHeader>
@@ -95,6 +95,6 @@ export default function Questions() {
           <b>2.</b> Nova peça sem custos adicionais: O cliente tem a opção de solicitar a confecção de uma nova peça sem nenhum custo adicional. No entanto, será necessário aguardar novamente o prazo de confecção. O envio da nova peça será gratuito.
         </AccordionBody>
       </Accordion>
-    </>
+    </div>
   );
 }

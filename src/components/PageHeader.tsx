@@ -6,6 +6,6 @@ interface PageHeaderProps {
 
 export function PageHeader({children} : PageHeaderProps ) {
   return (
-    <h1 className="text-3xl p-4">{children}</h1>
+    <h1 className="text-3xl py-6">{children}</h1>
   );
 }
