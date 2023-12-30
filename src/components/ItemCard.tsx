@@ -8,7 +8,12 @@ export interface ItemCardProps {
 
 export function ItemCard(props : ItemCardProps) {
   return (
-    <div placeholder='' className='w-60' >
+    <div className='w-60 h-[400px]
+          border border-white-200 rounded-lg
+          gap-4
+          shadow-md shadow-pink-flamingo-300
+          flex flex-col'
+    >
       <div
         placeholder=''
         color='transparent'
@@ -21,18 +26,16 @@ export function ItemCard(props : ItemCardProps) {
           {props.name}
         </p>
       </div>
-      <div placeholder='' className='flex-1'>
-        <img src={`/catalog/${props.file}`} alt="prop.image" className='h-60'/>
-        <p placeholder={props.description}>
-          <span className='font-medium'>{props.description}</span>
-        </p>
+      <div placeholder='' className='flex flex-col flex-1 align-middle justify-center items-center'>
+        <img src={`/catalog/${props.file}`} alt="prop.image" className='h-[200px] w-[200px] rounded-2xl'/>
+        <span className="font-medium w-52 text-center">{props.description}</span>
       </div>
       <div
         placeholder=''
-        className='align-middle justify-center flex text-center items-center'
+        className='flex-1 align-bottom justify-center flex text-center items-end'
       >
         <p placeholder=''>
-          <a href="">Faça um orçamento conosco</a>
+          <a href={`/orcamento?type=${props.name}`}>Faça um orçamento conosco</a>
         </p>
       </div>
     </div>

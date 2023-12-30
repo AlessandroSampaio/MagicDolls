@@ -5,7 +5,7 @@ import { ImageList } from './catalog_list';
 export function Catalogo() {
   return (
     <div className='pt-12'>
-      <div className="flex flex-wrap gap-4">
+      <div className="flex flex-wrap gap-8 justify-center items-center">
         {
           ImageList.map((image) => (
             <ItemCard
