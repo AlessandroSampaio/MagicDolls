@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 export default function Questions() {
 
   // const [open, setOpen] = useState<number>(1);

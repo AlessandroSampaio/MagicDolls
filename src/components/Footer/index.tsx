@@ -4,7 +4,7 @@ import pinterest from '../../assets/images/svg/pinterest.svg';
 
 export function Footer() {
   return (
-    <div className="w-full mt-8 bg-gray-800 flex align-middle items-center justify-between">
+    <div className="w-full mt-8 bg-black-900 flex align-middle items-center justify-between">
       <div>
         <a href='/' className='flex items-center py-4 px-8'>
           <img src={logo} alt='magic dolls' className='h-20 mr-2' />
