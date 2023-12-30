@@ -7,6 +7,7 @@ export default {
 
   theme: {
     screens: {
+      'normal': {'min': '541px'},
       'mobile': { 'max' : '540px' }
     },
     colors: {

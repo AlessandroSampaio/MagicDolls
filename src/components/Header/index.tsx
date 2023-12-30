@@ -9,9 +9,9 @@ export function Header () {
 
   return (
     <nav className='bg-white shadow-pink-flamingo-300 shadow-lg'>
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="mx-auto px-4">
         <div className="flex justify-between w-full ">
-          <div className="flex space-x-7 w-full">
+          <div className="flex  w-full justify-between">
             {/* Logo */}
             <div>
               <a href='/' className='flex items-center py-4 px-2'>
@@ -20,7 +20,7 @@ export function Header () {
             </div>
 
             {/* Menu */}
-            <div className='hidden md:flex items-center space-x-1 w-full justify-end'>
+            <div className='mobile:hidden flex items-center space-x-1 w-full justify-end'>
               <HeaderLink href='/' label='Inicio' />
               <HeaderLink href='/catalogo' label='Catalogo' />
               <HeaderLink href='/orcamento' label='Orçamento' />
@@ -29,12 +29,12 @@ export function Header () {
             </div>
 
             {/* Mobile menu */}
-            <div className="md:hidden flex items-center justify-end pr-8 w-full">
+            <div className="normal:hidden flex items-center justify-end pr-8 w-full">
               <Hamburger toggled={isNavOpen} toggle={setNavOpen} color='#f562f5'/>
             </div>
           </div>
         </div>
-        <div className={`${isNavOpen ? '' : 'hidden'} flex flex-col `}>
+        <div className={`${isNavOpen ? '' : 'hidden'} flex flex-col`}>
           <HeaderLink mobile href='/' label='Inicio' />
           <HeaderLink mobile href='/catalogo' label='Catalogo' />
           <HeaderLink mobile href='/orcamento' label='Orçamento' />
