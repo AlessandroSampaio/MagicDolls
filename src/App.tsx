@@ -4,6 +4,7 @@ import { About } from './pages/About';
 import { Layout } from './pages/Layout.tsx';
 import Questions from './pages/Questions/index.tsx';
 import { Catalogo } from './pages/Catalog/index.tsx';
+import { Budget } from './pages/Budget/index.tsx';
 
 export function App() {
   return (
@@ -12,6 +13,7 @@ export function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Home />} />
+            <Route path='/orcamento' element={<Budget />} />
             <Route path='/catalogo' element={<Catalogo />} />
             <Route path='/sobre' element={<About />} />
             <Route path='/duvidas-frequentes' element={<Questions />} />

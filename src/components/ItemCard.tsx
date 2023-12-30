@@ -1,5 +1,3 @@
-import { Card, CardBody, CardFooter, CardHeader, Typography } from '@material-tailwind/react';
-
 export interface ItemCardProps {
   file: string;
   name: string;
@@ -10,35 +8,33 @@ export interface ItemCardProps {
 
 export function ItemCard(props : ItemCardProps) {
   return (
-    <Card placeholder='' className='w-60' >
-      <CardHeader
-        floated={false}
-        shadow={false}
+    <div placeholder='' className='w-60' >
+      <div
         placeholder=''
         color='transparent'
         className='h-20 align-middle justify-center flex text-center items-center'
       >
-        <Typography
+        <p
           placeholder=''
           className='font-bold text-3xl'
         >
           {props.name}
-        </Typography>
-      </CardHeader>
-      <CardBody placeholder='' className='flex-1'>
+        </p>
+      </div>
+      <div placeholder='' className='flex-1'>
         <img src={`/catalog/${props.file}`} alt="prop.image" className='h-60'/>
-        <Typography placeholder={props.description}>
+        <p placeholder={props.description}>
           <span className='font-medium'>{props.description}</span>
-        </Typography>
-      </CardBody>
-      <CardFooter
+        </p>
+      </div>
+      <div
         placeholder=''
         className='align-middle justify-center flex text-center items-center'
       >
-        <Typography placeholder=''>
+        <p placeholder=''>
           <a href="">Faça um orçamento conosco</a>
-        </Typography>
-      </CardFooter>
-    </Card>
+        </p>
+      </div>
+    </div>
   );
 }
