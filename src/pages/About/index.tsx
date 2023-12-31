@@ -3,7 +3,7 @@ import about from '../../assets/images/about.jpg';
 export function About() {
   return (
     <div className="shadow-lg shadow-primary-light m-8 p-9 rounded-lg" placeholder=''>
-      <div placeholder='' className='flex gap-2'>
+      <div placeholder='' className='flex gap-2 mobile:flex-col mobile:justify-center mobile:items-center'>
         <img src={about} alt="Tiago Vasconcelos" className='size-36 rounded-full'/>
         <div>
           <p  className="mb-2" placeholder=''>
