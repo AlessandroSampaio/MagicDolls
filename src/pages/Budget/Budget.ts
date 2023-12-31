@@ -2,6 +2,8 @@ import { z } from 'zod';
 
 export const budgetForm = z.object({
   name: z.string(),
+  email: z.string().email(),
+  telefone: z.string(),
   endereco: z.string(),
   numero: z.number(),
   bairro: z.string(),
@@ -9,8 +11,8 @@ export const budgetForm = z.object({
   estilo: z.string(),
   tamanho: z.number(),
   base: z.string(),
-  acessorios: z.string(),
-  observacoes: z.string()
+  acessorios: z.string().optional(),
+  observacoes: z.string().optional(),
 });
 
 
