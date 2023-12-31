@@ -11,6 +11,7 @@ export default {
       'mobile': { 'max' : '540px' }
     },
     colors: {
+      transparent: 'transparent',
       'mirage': {
         '50': '#f4f6fb',
         '100': '#e8ecf6',

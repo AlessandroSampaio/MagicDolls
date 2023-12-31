@@ -1,48 +1,49 @@
 import { InputHTMLAttributes } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
-  label?: string,
 }
 
 
-export function Input({ className, label, placeholder, ...props }: InputProps) {
-
-  if(placeholder){
-    label = placeholder;
-  }
+export function Input({ className, ...props }: InputProps) {
 
   return (
-    <div className='flex flex-col min-w-[350px] m-2 relative'>
+    <div className='flex flex-col m-2 relative'>
       <input {...props} className={`
       peer
       border border-pink-flamingo-300 focus:border-pink-flamingo-500
       rounded-2xl
       px-4
       py-2
-      w-full
       h-[56px]
       outline-0
       bg-white-50
+      placeholder:capitalize
+      placeholder-transparent
       ${className}`} />
       <label
         htmlFor={props.id}
         className='
-          text-pink-flamingo-500
-          font-medium
-          pl-[17px]
-          pointer-events-none
-          capitalize
           absolute
-          translate-y-[16px]
-          scale-100
-          origin-top-left
+          px-4
+          text-sm
           transition-all
-          peer-focus:translate-y-[0px]
-          peer-focus:scale-75
+          capitalize
+          text-iron-400
+          peer-placeholder-shown:top-[17px]
+          peer-placeholder-shown:text-base
+          peer-placeholder-shown:text-iron-900
+          peer-focus:text-sm
+          peer-focus:top-0
+          peer-focus:text-iron-400
         '
       >
-        {label}
+        {props.placeholder}
       </label>
     </div>
   );
 }
+
+// peer-placeholder-shown:px-4
+//           peer-placeholder-shown:text-sm
+//           peer-focus:px-4
+//           peer-focus:text-sm
