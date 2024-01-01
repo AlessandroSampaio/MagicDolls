@@ -1,4 +1,5 @@
 import { Input } from '../../components/Input';
+import { Select } from '../../components/Select';
 
 export function Budget() {
 
@@ -14,7 +15,8 @@ export function Budget() {
         <Input id="cep" placeholder='cep' type="text" />
 
         {/* Replace with custom Select/options */}
-        <select name="estilo" id="estilo" title='estilo'
+        <Select name="estilo" id="estilo" title='estilo'
+          placeholder='Estilo de peça'
           className='min-w-[200px] w-[350px] border'
         >
           <option value="1">Chibi</option>
@@ -22,7 +24,7 @@ export function Budget() {
           <option value="3">Figure pequena</option>
           <option value="4">Figures</option>
           <option value="5">Topo de Bolo</option>
-        </select>
+        </Select>
 
         <Input id="tamanho" placeholder='tamanho' type="text" />
         <Input id="base" placeholder='base' type="text" />
