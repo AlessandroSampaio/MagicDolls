@@ -1,5 +1,6 @@
 import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
+import { TextArea } from '../../components/TextArea';
 
 export function Budget() {
 
@@ -40,9 +41,26 @@ export function Budget() {
         </div>
 
         {/* Replace with custom TextArea */}
-        <textarea name="observacoes" id="observacoes" cols={30} rows={5} title='observacoes'
+        <TextArea
+          name="observacoes"
+          id="observacoes"
+          cols={30}
+          rows={5}
+          title='observacoes'
+          placeholder='observacoes'
           className='border w-full'
         />
+        <button
+          className='
+            mobile:w-full w-1/2
+            bg-teal-400
+            p-4
+            rounded-xl
+            text-white-50
+          '
+        >
+          Enviar Orçamento
+        </button>
       </form>
     </div>
   );
