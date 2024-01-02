@@ -1,16 +1,21 @@
 import { SelectHTMLAttributes } from 'react';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>{
+  parentStyle?: string,
 
 }
 
-export function Select({className, ...props}: SelectProps) {
+export function Select({className, parentStyle, ...props}: SelectProps) {
   if(props.id == null){
     return null;
   }
 
+  if(!parentStyle){
+    parentStyle='';
+  }
+
   return (
-    <div className='relative flex flex-col m-2'>
+    <div className={`relative flex flex-col m-2 ${parentStyle}`}>
       <select {...props}
         className={`
           peer

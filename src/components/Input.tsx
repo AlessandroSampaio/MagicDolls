@@ -1,13 +1,18 @@
 import { InputHTMLAttributes } from 'react';
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+  parentStyle?: string | undefined;
 }
 
 
-export function Input({ className, ...props }: InputProps) {
+export function Input({ className, parentStyle, ...props }: InputProps) {
+
+  if(!parentStyle){
+    parentStyle='';
+  }
 
   return (
-    <div className='flex flex-col m-2 relative'>
+    <div className={`flex flex-col m-2 relative ${parentStyle}`}>
       <input {...props} className={`
       peer
       border border-pink-flamingo-300 focus:border-pink-flamingo-500
