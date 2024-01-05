@@ -1,23 +1,27 @@
-import { SelectHTMLAttributes } from 'react';
+import { SelectHTMLAttributes, forwardRef } from 'react';
 
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement>{
   parentStyle?: string,
+  error?: string | undefined,
 
 }
 
-export function Select({className, parentStyle, ...props}: SelectProps) {
-  if(props.id == null){
-    return null;
-  }
+export const Select = forwardRef<HTMLSelectElement, SelectProps >(
 
-  if(!parentStyle){
-    parentStyle='';
-  }
+  function Select({className, parentStyle, error, ...props}: SelectProps, ref) {
+    if(props.id == null){
+      return null;
+    }
 
-  return (
-    <div className={`relative flex flex-col m-2 ${parentStyle}`}>
-      <select {...props}
-        className={`
+    if(!parentStyle){
+      parentStyle='';
+    }
+
+    return (
+      <div className={`relative flex flex-col m-2 ${parentStyle}`}>
+        <select {...props}
+          ref={ref}
+          className={`
           peer
           border border-pink-flamingo-300 focus:border-pink-flamingo-500
           rounded-2xl
@@ -30,12 +34,20 @@ export function Select({className, parentStyle, ...props}: SelectProps) {
           placeholder-transparent
           ${className}
         `}
-      >
-        {props.children}
-      </select>
-      <label
-        htmlFor={props.id}
-        className='
+        >
+          {props.children}
+        </select>
+        {
+          error &&
+          <span
+            className='text-rose pl-4 text-sm'
+          >
+            {error}
+          </span>
+        }
+        <label
+          htmlFor={props.id}
+          className='
           absolute
           w-full
           px-4
@@ -50,10 +62,11 @@ export function Select({className, parentStyle, ...props}: SelectProps) {
           peer-focus:top-0
           peer-focus:text-iron-400
         '
-      >
-        {props.placeholder}
-      </label>
-    </div>
-  );
+        >
+          {props.placeholder}
+        </label>
+      </div>
+    );
 
-}
+  }
+);

@@ -2,8 +2,13 @@ import { Input } from '../../components/Input';
 import { Select } from '../../components/Select';
 import { TextArea } from '../../components/TextArea';
 import whatsapp from '../../assets/images/svg/whatsapp.svg';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { BudgetFormData, budgetForm } from './Budget';
 
 export function Budget() {
+
+  const { register, handleSubmit, formState: { errors } } = useForm<BudgetFormData>({ resolver: zodResolver(budgetForm) });
 
   return (
     <div className="m-10">
@@ -21,25 +26,41 @@ export function Budget() {
           <p>Após a finalização da peça, procedemos com o envio. Utilizamos os Correios para realizar entregas em todo o Brasil.</p>
         </div>
       </div>
-      <form action="" className='flex flex-wrap w-full justify-center items-center mt-6'>
-        <Input id="name" placeholder='nome' type="text" parentStyle='w-full'/>
+      <form
+        className='flex flex-wrap w-full justify-center items-center mt-6'
+      >
+        <Input placeholder='Nome' parentStyle='w-full' {...register('name')} error={errors.name?.message} />
         <div className='flex w-full mobile:flex-col' >
-          <Input id="email" placeholder='email' type="email" parentStyle='w-[70%] mobile:w-full' />
-          <Input id="telefone" placeholder='telefone' type="text" parentStyle='w-[30%] mobile:w-full'/>
+          <Input placeholder='email' parentStyle='w-[70%] mobile:w-full' {...register('email')} error={errors.email?.message} />
+          <Input placeholder='telefone' type="text" parentStyle='w-[30%] mobile:w-full' {...register('telefone')} error={errors.telefone?.message} />
         </div>
-        <Input id="endereco" placeholder='Endereço' type="text" className='min-w-[300px]'  parentStyle='w-full'/>
+        <Input placeholder='Endereço'  className='min-w-[300px]' parentStyle='w-full' {...register('endereco')} error={errors.endereco?.message} />
         <div className='flex mobile:flex-col w-full'>
-          <Input id="numero" placeholder='numero' type="number" className='min-w-[50px]' parentStyle='w-[20%] mobile:w-full'/>
-          <Input id="bairro" placeholder='Bairro' type="text" className='min-w-[200px]' parentStyle='w-1/2 mobile:w-full' />
-          <Input id="cep" placeholder='cep' type="text" className='min-w-100px' parentStyle='w-[30%] mobile:w-full'/>
+          <Input placeholder='numero'
+            className='min-w-[50px]'
+            parentStyle='w-[20%] mobile:w-full'
+            {...register('numero', { valueAsNumber: true })}
+            error={errors.numero?.message}
+          />
+          <Input
+            placeholder='Bairro'
+            className='min-w-[200px]'
+            parentStyle='w-1/2 mobile:w-full'
+            {...register('bairro')}
+            error={errors.bairro?.message}
+          />
+          <Input placeholder='cep'  className='min-w-100px' parentStyle='w-[30%] mobile:w-full'{...register('cep')} error={errors.cep?.message} />
         </div>
 
-        {/* Replace with custom Select/options */}
+
         <div className='w-full flex'>
-          <Select name="estilo" id="estilo" title='estilo'
+          <Select
+            id='estilo'
+            title='estilo'
             placeholder='Estilo de peça'
             className='min-w-[200px] w-full'
             parentStyle='w-[70%]'
+            {...register('estilo', { valueAsNumber: true })}
           >
             <option value="1">Chibi</option>
             <option value="2">Mini chibi</option>
@@ -48,24 +69,25 @@ export function Budget() {
             <option value="5">Topo de Bolo</option>
           </Select>
 
-          <Input id="tamanho" placeholder='tamanho' type="text" parentStyle='w-[30%]' />
+          <Input placeholder='tamanho' parentStyle='w-[30%]' {...register('tamanho')} error={errors.tamanho?.message} />
         </div>
         <div className='flex mobile:flex-col w-full'>
-          <Input id="base" placeholder='base' type="text" parentStyle='w-1/2'/>
-          <Input id="acessorios" placeholder='acessorios' type="text" parentStyle='w-1/2'/>
+          <Input placeholder='base' parentStyle='w-1/2' {...register('base')} error={errors.base?.message} />
+          <Input placeholder='acessorios' parentStyle='w-1/2' {...register('acessorios')} error={errors.acessorios?.message} />
         </div>
 
         {/* Replace with custom TextArea */}
         <TextArea
-          name="observacoes"
           id="observacoes"
           cols={30}
           rows={5}
           title='observacoes'
           placeholder='observacoes'
           className='border w-full'
+          {...register('observacoes')}
         />
         <button
+          type='button'
           className='
             mobile:w-full
             bg-teal-400
@@ -78,6 +100,12 @@ export function Budget() {
             items-center
             mt-6
           '
+          onClick={handleSubmit((data: BudgetFormData) => {
+            console.log(data);
+          },
+          (error) => {
+            console.log(error);
+          })}
         >
           Enviar Orçamento
           <img src={whatsapp} alt="whatsapp" className='size-8' />
