@@ -9,7 +9,7 @@ import { Budget } from './pages/Budget/index.tsx';
 export default function App() {
   return (
     <div className='h-dvh w-full flex'>
-      <BrowserRouter>
+      <BrowserRouter basename={'/MagicDolls/'}>
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Home />} />
