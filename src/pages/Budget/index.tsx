@@ -5,8 +5,16 @@ import whatsapp from '../../assets/images/svg/whatsapp.svg';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { BudgetFormData, budgetForm } from './Budget';
+import { openInNewTab } from '../../util/openLink';
 
 export function Budget() {
+
+  function handleLink(data: BudgetFormData){
+
+    const link = `https://wa.me/5585984751461?text=Oi meu nome e _${data.name}_`;
+
+    openInNewTab(link);
+  }
 
   const { register, handleSubmit, formState: { errors } } = useForm<BudgetFormData>({ resolver: zodResolver(budgetForm) });
 
@@ -69,7 +77,7 @@ export function Budget() {
             <option value="5">Topo de Bolo</option>
           </Select>
 
-          <Input placeholder='tamanho' parentStyle='w-[30%]' {...register('tamanho')} error={errors.tamanho?.message} />
+          <Input placeholder='tamanho' parentStyle='w-[30%]' {...register('tamanho', {valueAsNumber: true})} error={errors.tamanho?.message} />
         </div>
         <div className='flex mobile:flex-col w-full'>
           <Input placeholder='base' parentStyle='w-1/2' {...register('base')} error={errors.base?.message} />
@@ -101,7 +109,7 @@ export function Budget() {
             mt-6
           '
           onClick={handleSubmit((data: BudgetFormData) => {
-            console.log(data);
+            handleLink(data);
           },
           (error) => {
             console.log(error);

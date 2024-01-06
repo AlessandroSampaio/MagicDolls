@@ -6,7 +6,7 @@ import Questions from './pages/Questions/index.tsx';
 import { Catalogo } from './pages/Catalog/index.tsx';
 import { Budget } from './pages/Budget/index.tsx';
 
-export function App() {
+export default function App() {
   return (
     <div className='h-dvh w-full flex'>
       <BrowserRouter>
