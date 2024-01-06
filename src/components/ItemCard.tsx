@@ -27,7 +27,7 @@ export function ItemCard(props : ItemCardProps) {
         </p>
       </div>
       <div placeholder='' className='flex flex-col flex-1 align-middle justify-center items-center'>
-        <img src={`/catalog/${props.file}`} alt="prop.image" className='h-[200px] w-[200px] rounded-2xl'/>
+        <img src={`/MagicDolls/catalog/${props.file}`} alt="prop.image" className='h-[200px] w-[200px] rounded-2xl'/>
         <span className="font-medium w-52 text-center">{props.description}</span>
       </div>
       <div
