@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Home } from './pages/Home';
 import { About } from './pages/About';
 import { Layout } from './pages/Layout.tsx';
@@ -9,7 +9,7 @@ import { Budget } from './pages/Budget/index.tsx';
 export default function App() {
   return (
     <div className='h-dvh w-full flex'>
-      <BrowserRouter basename={'/MagicDolls/'}>
+      <HashRouter basename={'/MagicDolls/'}>
         <Routes>
           <Route element={<Layout />}>
             <Route path='/' element={<Home />} />
@@ -19,7 +19,7 @@ export default function App() {
             <Route path='/duvidas-frequentes' element={<Questions />} />
           </Route>
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
