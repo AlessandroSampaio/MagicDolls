@@ -22,10 +22,10 @@ export function Header () {
             {/* Menu */}
             <div className='mobile:hidden flex items-center space-x-1 w-full justify-end'>
               <HeaderLink href='/' label='Inicio' />
-              <HeaderLink href='catalogo' label='Catalogo' />
-              <HeaderLink href='orcamento' label='Orçamento' />
-              <HeaderLink href='duvidas-frequentes' label='Dúvidas Frequentes' />
-              <HeaderLink href='sobre' label='Sobre nós' />
+              <HeaderLink href='#/catalogo' label='Catalogo' />
+              <HeaderLink href='#/orcamento' label='Orçamento' />
+              <HeaderLink href='#/duvidas-frequentes' label='Dúvidas Frequentes' />
+              <HeaderLink href='#/sobre' label='Sobre nós' />
             </div>
 
             {/* Mobile menu */}
@@ -36,10 +36,10 @@ export function Header () {
         </div>
         <div className={`${isNavOpen ? '' : 'hidden'} flex flex-col`}>
           <HeaderLink mobile href='/' label='Inicio' />
-          <HeaderLink mobile href='catalogo' label='Catalogo' />
-          <HeaderLink mobile href='orcamento' label='Orçamento' />
-          <HeaderLink mobile href='duvidas-frequentes' label='Dúvidas Frequentes' />
-          <HeaderLink mobile href='sobre' label='Sobre nós' />
+          <HeaderLink mobile href='#/catalogo' label='Catalogo' />
+          <HeaderLink mobile href='#/orcamento' label='Orçamento' />
+          <HeaderLink mobile href='#/duvidas-frequentes' label='Dúvidas Frequentes' />
+          <HeaderLink mobile href='#/sobre' label='Sobre nós' />
         </div>
       </div>
     </nav>
