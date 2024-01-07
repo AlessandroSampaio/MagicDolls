@@ -14,14 +14,14 @@ export function Header () {
           <div className="flex  w-full justify-between">
             {/* Logo */}
             <div>
-              <a href='/' className='flex items-center py-4 px-2'>
+              <a href='/MagicDolls' className='flex items-center py-4 px-2'>
                 <img src={logo} alt='magic dolls' className='h-20 mr-2' />
               </a>
             </div>
 
             {/* Menu */}
             <div className='mobile:hidden flex items-center space-x-1 w-full justify-end'>
-              <HeaderLink href='/' label='Inicio' />
+              <HeaderLink href='/MagicDolls' label='Inicio' />
               <HeaderLink href='#/catalogo' label='Catalogo' />
               <HeaderLink href='#/orcamento' label='Orçamento' />
               <HeaderLink href='#/duvidas-frequentes' label='Dúvidas Frequentes' />
@@ -35,7 +35,7 @@ export function Header () {
           </div>
         </div>
         <div className={`${isNavOpen ? '' : 'hidden'} flex flex-col`}>
-          <HeaderLink mobile href='/' label='Inicio' />
+          <HeaderLink mobile href='/MagicDolls' label='Inicio' />
           <HeaderLink mobile href='#/catalogo' label='Catalogo' />
           <HeaderLink mobile href='#/orcamento' label='Orçamento' />
           <HeaderLink mobile href='#/duvidas-frequentes' label='Dúvidas Frequentes' />
