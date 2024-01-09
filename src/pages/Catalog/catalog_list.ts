@@ -15,14 +15,14 @@ export const ImageList : ItemCardProps[] = [
   },
   {
     file : 'figures-20cm.jpg',
-    name : 'Figures',
+    name : 'Figure',
     description: 'Figures de 15cm até 30cm',
     price: '450,00'
   },
   {
     file : 'topo-de-bolo.jpg',
     name : 'Personalizados',
-    description: 'Enfeites de topo de bolo para festas e afins',
+    description: 'Monte o seu personalizado',
     price: '150,00'
   }
 ];
