@@ -13,7 +13,7 @@ interface AccordionHeaderProps {
 
 interface AccordionBodyProps {
   show: boolean,
-  children: string | ReactElement,
+  children: string | ReactElement | Array<ReactElement>,
 }
 
 export function Accordion({onclick, children} : AccordionProps) {
